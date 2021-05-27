@@ -30,6 +30,7 @@ RSpec.describe Message, type: :model do
     it 'roomが紐付いていないと保存できないこと' do
       @message.room = nil
       @message.valid?
+      binding.pry
       expect(@message.errors.full_messages).to include('Room must exist')
     end
 
